@@ -3055,6 +3055,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallOpen: {fileID: 0}
   numberOfSockets: 5
+  sockets: 
 --- !u!1 &468398110
 GameObject:
   m_ObjectHideFlags: 0
@@ -5778,7 +5779,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 64
+    m_Bits: 32
   m_Handedness: 0
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
@@ -7185,7 +7186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 128
+    m_Bits: 32
   m_Handedness: 0
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
@@ -17682,6 +17683,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallOpen: {fileID: 0}
   numberOfSockets: 5
+  sockets: 
 --- !u!33 &8058941647190036561
 MeshFilter:
   m_ObjectHideFlags: 0
