@@ -31,7 +31,7 @@ public class GoofScript : MonoBehaviour
         // Extract the last character of the tag and convert it to an integer
         int sockNum = GetSockNum(tag);
         int sockIndex = sockNum - 1;
-        Debug.Log("sockNum: " + sockIndex);
+        //Debug.Log("sockNum: " + sockIndex);
 
         // Check if socket is legal
         if (!CheckSocketIndexValid(sockIndex)) {return;}
@@ -61,7 +61,23 @@ public class GoofScript : MonoBehaviour
         return true;
     }
 
-    public void SockUnplaced(GameObject socket) { sockets[0] = false; }
+    public void SockUnplaced(GameObject socket) 
+    { 
+        // Get the tag
+        string tag = socket.tag;
+
+        // Extract the last character of the tag and convert it to an integer
+        int sockNum = GetSockNum(tag);
+        int sockIndex = sockNum - 1;
+        //Debug.Log("sockNum: " + sockIndex);
+
+        // Check if socket is legal
+        if (!CheckSocketIndexValid(sockIndex)) {return;}
+
+        // Update socket status
+        sockets[sockIndex] = false;
+
+    }
 
     private void CheckAllSockets()
     {
