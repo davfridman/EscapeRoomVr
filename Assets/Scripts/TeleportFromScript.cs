@@ -5,6 +5,7 @@ using UnityEngine;
 public class TeleportFromScript : MonoBehaviour
 {
     [SerializeField] private Transform teleportTo;
+    [SerializeField] private bool teleporterOnline = false;
 
     // Start is called before the first frame update
     void Start()
@@ -18,10 +19,13 @@ public class TeleportFromScript : MonoBehaviour
         
     }
 
+    public void ActivateTeleporter() { teleporterOnline = true; }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && teleporterOnline)
         {
+            Debug.Log("teleporting");
             other.transform.position = teleportTo.position;
         }
     }
