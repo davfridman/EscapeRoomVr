@@ -34,7 +34,7 @@ public class GoofScript : MonoBehaviour
         Debug.Log("sockNum: " + sockIndex);
 
         // Check if socket is legal
-        if (!CheckSocketNumValid(sockIndex)) {return;}
+        if (!CheckSocketIndexValid(sockIndex)) {return;}
 
         // Update socket status
         sockets[sockIndex] = true;
@@ -51,13 +51,13 @@ public class GoofScript : MonoBehaviour
             return sockTagNum;
         }
         Debug.LogWarning("Tag is empty or does not end with a digit.");
-        return -1;
+        return 0;
     }
 
-    public bool CheckSocketNumValid(int sockNum)
+    public bool CheckSocketIndexValid(int sockIndex)
     {
-        if (sockNum == -1) {return false;}
-        if (sockNum >= numberOfSockets) {return false;}
+        if (sockIndex == -1) {return false;}
+        if (sockIndex >= numberOfSockets) {return false;}
         return true;
     }
 
