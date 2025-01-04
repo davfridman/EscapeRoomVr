@@ -9,6 +9,16 @@ TagManager:
   - HoleAttachable2
   - HoleAttachable3
   - HoleAttachable4
+  - ElectricitySocket1
+  - ElectricitySocket2
+  - ElectricitySocket3
+  - ElectricitySocket4
+  - ElectricitySocket5
+  - Plug1
+  - Plug2
+  - Plug3
+  - Plug4
+  - Plug5
   layers:
   - Default
   - TransparentFX
