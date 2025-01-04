@@ -40,7 +40,7 @@ public class ElectricityPuzzleManagerScript : MonoBehaviour
         //Debug.Log("sockNum: " + sockIndex);
 
         // Check if socket is legal
-        if (!CheckSocketIndexValid(plugIndex) || !!CheckSocketIndexValid(socketIndex) || plugNum != socketNum) {return;}
+        if (!CheckSocketIndexValid(plugIndex) || !CheckSocketIndexValid(socketIndex) || plugNum != socketNum) {return;}
 
         // Update socket status
         sockets[socketIndex] = true;
