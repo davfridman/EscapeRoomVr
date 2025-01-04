@@ -2610,7 +2610,19 @@ MonoBehaviour:
         m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 457069374}
+        m_TargetAssemblyTypeName: ElectricityPuzzleManagerScript, Assembly-CSharp
+        m_MethodName: SockUnplaced
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4089624660000528966}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_ShowInteractableHoverMeshes: 1
@@ -5794,10 +5806,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 457069374}
+        m_TargetAssemblyTypeName: ElectricityPuzzleManagerScript, Assembly-CSharp
+        m_MethodName: SockPlaced
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1157349468}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 457069374}
+        m_TargetAssemblyTypeName: ElectricityPuzzleManagerScript, Assembly-CSharp
+        m_MethodName: SockUnplaced
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1157349468}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_ShowInteractableHoverMeshes: 1
@@ -7151,7 +7187,7 @@ GameObject:
   - component: {fileID: 1521719583}
   m_Layer: 0
   m_Name: ElectricitySocket3
-  m_TagString: Untagged
+  m_TagString: ElectricitySocket3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7201,10 +7237,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 457069374}
+        m_TargetAssemblyTypeName: ElectricityPuzzleManagerScript, Assembly-CSharp
+        m_MethodName: SockPlaced
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1521719579}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 457069374}
+        m_TargetAssemblyTypeName: ElectricityPuzzleManagerScript, Assembly-CSharp
+        m_MethodName: SockUnplaced
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1521719579}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_ShowInteractableHoverMeshes: 1
@@ -7645,7 +7705,7 @@ GameObject:
   - component: {fileID: 1648289648}
   m_Layer: 0
   m_Name: ElectricitySocket4
-  m_TagString: Untagged
+  m_TagString: ElectricitySocket4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7695,10 +7755,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 457069374}
+        m_TargetAssemblyTypeName: ElectricityPuzzleManagerScript, Assembly-CSharp
+        m_MethodName: SockPlaced
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1648289644}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 457069374}
+        m_TargetAssemblyTypeName: ElectricityPuzzleManagerScript, Assembly-CSharp
+        m_MethodName: SockUnplaced
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1648289644}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_ShowInteractableHoverMeshes: 1
@@ -10026,7 +10110,7 @@ GameObject:
   - component: {fileID: 2051542191}
   m_Layer: 0
   m_Name: ElectricitySocket5
-  m_TagString: Untagged
+  m_TagString: ElectricitySocket5
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10076,10 +10160,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 457069374}
+        m_TargetAssemblyTypeName: ElectricityPuzzleManagerScript, Assembly-CSharp
+        m_MethodName: SockPlaced
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2051542187}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 457069374}
+        m_TargetAssemblyTypeName: ElectricityPuzzleManagerScript, Assembly-CSharp
+        m_MethodName: SockUnplaced
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2051542187}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_ShowInteractableHoverMeshes: 1
