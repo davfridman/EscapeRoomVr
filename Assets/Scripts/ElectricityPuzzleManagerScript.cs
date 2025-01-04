@@ -7,7 +7,7 @@ public class ElectricityPuzzleManagerScript : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] private GameObject wallOpen;
     [SerializeField] private int numberOfSockets = 5;
-    private bool[] sockets;
+    [SerializeField] private bool[] sockets;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,10 +27,10 @@ public class ElectricityPuzzleManagerScript : MonoBehaviour
     public void SockPlaced(GameObject socket)
     {
         // Get the XRSocketInteractor from the GameObject
-        socket.GetComponent<SocketScript>().socketCheck();
+        
         // Get the tag
         string socketTag = socket.tag;
-        string plugTag = socket.tag;
+        string plugTag = socket.GetComponent<SocketScript>().socketCheck();
 
         // Extract the last character of the tag and convert it to an integer
         int socketNum = GetSockNum(socketTag);

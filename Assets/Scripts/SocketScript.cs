@@ -12,17 +12,19 @@ public class SocketScript : MonoBehaviour
         socket = GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor>();
     }
 
-    public void socketCheck()
+    public string socketCheck()
     {
         UnityEngine.XR.Interaction.Toolkit.Interactables.IXRSelectInteractable objName = socket.firstInteractableSelected; // Updated reference
 
         if (objName != null)  // Ensure it's not null before accessing properties
         {
             Debug.Log(objName.transform.tag + " in socket of " + transform.name);
+            return objName.transform.tag;
         }
         else
         {
             Debug.Log("No object in the socket of " + transform.name);
+            return "";
         }
     }
 }
