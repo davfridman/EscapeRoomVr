@@ -1,9 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+
 
 public class NumberPadButtonScript : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI textBox;
+    [SerializeField] private int passwordLength = 4;
+    [SerializeField] private string secretPassword;
+    [SerializeField] private TeleportFromScript teleportActivation;
+    [SerializeField] private bool isActivated = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,9 +23,27 @@ public class NumberPadButtonScript : MonoBehaviour
     {
         
     }
+    public void Activate(){
+        isActivated = true;
+    }
 
     public void NumberButtonPressed(int buttonNum)
     {
+        if(!isActivated){
+            return;
+        }
         Debug.Log("buttonNum: " + buttonNum);
+        if(buttonNum == -1){
+            bool isPasswordCorrect = secretPassword.Equals(textBox.text);
+            textBox.text = "";
+            if(isPasswordCorrect){
+                teleportActivation.ActivateTeleporter();
+            }
+        }
+        else if(textBox.text.Length < passwordLength){ 
+            textBox.text += buttonNum;
+        }
+        
     }
+
 }

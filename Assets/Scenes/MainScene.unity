@@ -882,7 +882,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250185517}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe4f00792e61bcb418a299e57e9e2c6f, type: 3}
   m_Name: 
@@ -896,7 +896,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250185517}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e2f4617667341945b5a7756e14b62d0, type: 3}
   m_Name: 
@@ -2035,7 +2035,6 @@ GameObject:
   m_Component:
   - component: {fileID: 419476752}
   - component: {fileID: 419476753}
-  - component: {fileID: 419476754}
   m_Layer: 0
   m_Name: NumberPad
   m_TagString: Untagged
@@ -2071,18 +2070,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7baefb0360c99734182128bc2a5c6aaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &419476754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 419476751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db40c8c7cb2ce61459e7b04acb2c19af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  textBox: {fileID: 2002515344}
+  passwordLength: 4
+  secretPassword: 2161
+  teleportActivation: {fileID: 250185519}
+  isActivated: 0
 --- !u!1 &424994039
 GameObject:
   m_ObjectHideFlags: 0
