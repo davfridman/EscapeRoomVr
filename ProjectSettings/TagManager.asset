@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Anchor
+  - HoleAttachable1
+  - HoleAttachable2
+  - HoleAttachable3
+  - HoleAttachable4
   layers:
   - Default
   - TransparentFX
