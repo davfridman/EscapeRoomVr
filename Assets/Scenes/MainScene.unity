@@ -520,6 +520,7 @@ GameObject:
   - component: {fileID: 216680359}
   - component: {fileID: 216680358}
   - component: {fileID: 216680357}
+  - component: {fileID: 216680362}
   m_Layer: 0
   m_Name: Cube1
   m_TagString: Untagged
@@ -762,6 +763,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 216680355}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &216680362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216680355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7503fdfcdf18e2f469237112f56f7947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xrGrabInteractable: {fileID: 216680357}
 --- !u!1 &299639867
 GameObject:
   m_ObjectHideFlags: 0
@@ -894,6 +908,7 @@ GameObject:
   - component: {fileID: 331946398}
   - component: {fileID: 331946397}
   - component: {fileID: 331946396}
+  - component: {fileID: 331946401}
   m_Layer: 0
   m_Name: Cylinder4
   m_TagString: Untagged
@@ -1138,6 +1153,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 331946394}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &331946401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331946394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7503fdfcdf18e2f469237112f56f7947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xrGrabInteractable: {fileID: 331946396}
 --- !u!1001 &441087506
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2099,6 +2127,7 @@ GameObject:
   - component: {fileID: 1136900411}
   - component: {fileID: 1136900410}
   - component: {fileID: 1136900409}
+  - component: {fileID: 1136900414}
   m_Layer: 0
   m_Name: Capsule3
   m_TagString: Untagged
@@ -2343,6 +2372,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1136900407}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1136900414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136900407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7503fdfcdf18e2f469237112f56f7947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xrGrabInteractable: {fileID: 1136900409}
 --- !u!1 &1157912863
 GameObject:
   m_ObjectHideFlags: 0
@@ -2915,6 +2957,7 @@ GameObject:
   - component: {fileID: 1537949130}
   - component: {fileID: 1537949129}
   - component: {fileID: 1537949128}
+  - component: {fileID: 1537949133}
   m_Layer: 0
   m_Name: Sphere2
   m_TagString: Untagged
@@ -3157,6 +3200,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1537949126}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1537949133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537949126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7503fdfcdf18e2f469237112f56f7947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xrGrabInteractable: {fileID: 1537949128}
 --- !u!1 &1747501578
 GameObject:
   m_ObjectHideFlags: 0
@@ -3504,6 +3560,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 2009918966}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 331946394}
+        m_TargetAssemblyTypeName: GoofScript, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
