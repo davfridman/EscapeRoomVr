@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class GoofScript : MonoBehaviour
 {
-    [SerializeField] private GameObject wallOpen;
     [SerializeField] private int numberOfSockets = 4;
     private bool[] sockets;
+    [SerializeField] private ElectricityPuzzleManagerScript nextScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -81,13 +81,13 @@ public class GoofScript : MonoBehaviour
 
     private void CheckAllSockets()
     {
-        if (wallOpen == null) { return; }
+        if (nextScript == null) { return; }
 
         // Check if all sockets are true
         for (int i = 0; i < numberOfSockets; i++)
         {
             if (!sockets[i]) { return; }
         }
-        Destroy(wallOpen);
+        nextScript.Activate();
     }
 }
