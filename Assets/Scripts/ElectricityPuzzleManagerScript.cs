@@ -5,9 +5,10 @@ using UnityEngine;
 public class ElectricityPuzzleManagerScript : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] private GameObject wallOpen;
     [SerializeField] private int numberOfSockets = 5;
     [SerializeField] private bool[] sockets;
+    [SerializeField] private UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable[] xrGrabInteractable;
+    [SerializeField] private NumberPadButtonScript nextScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,34 @@ public class ElectricityPuzzleManagerScript : MonoBehaviour
     {
         
     }
+    public void Activate(){
+        for(int i=0;i<numberOfSockets; i++){
+            if (xrGrabInteractable[i] != null)
+            {
+                int defaultLayer = LayerMask.NameToLayer("Default");
+                if (defaultLayer != -1)
+                {
+                    // Create an InteractionLayerMask without the default layer
+                    xrGrabInteractable[i].interactionLayers |= UnityEngine.XR.Interaction.Toolkit.InteractionLayerMask.GetMask("Default");
+                    Debug.Log("Default layer removed from interaction layers.");
+                }
+            }
+        }
+    }
+        public void DeActivate(){
+        for(int i=0;i<numberOfSockets; i++){
+            if (xrGrabInteractable[i] != null)
+            {
+                int defaultLayer = LayerMask.NameToLayer("Default");
+                if (defaultLayer != -1)
+                {
+                    // Create an InteractionLayerMask without the default layer
+                    xrGrabInteractable[i].interactionLayers &= ~UnityEngine.XR.Interaction.Toolkit.InteractionLayerMask.GetMask("Default");
+                    Debug.Log("Default layer removed from interaction layers.");
+                }
+            }
+        }
+    }
 
     public void SockPlaced(GameObject socket)
     {
@@ -31,6 +60,7 @@ public class ElectricityPuzzleManagerScript : MonoBehaviour
         // Get the tag
         string socketTag = socket.tag;
         string plugTag = socket.GetComponent<SocketScript>().socketCheck();
+        Debug.Log(socketTag + " in socket of " + plugTag);
 
         // Extract the last character of the tag and convert it to an integer
         int socketNum = GetSockNum(socketTag);
@@ -87,13 +117,14 @@ public class ElectricityPuzzleManagerScript : MonoBehaviour
 
     private void CheckAllSockets()
     {
-        if (wallOpen == null) { return; }
 
         // Check if all sockets are true
         for (int i = 0; i < numberOfSockets; i++)
         {
             if (!sockets[i]) { return; }
         }
-        Destroy(wallOpen);
+        DeActivate();
+        nextScript.Activate();
+
     }
 }
