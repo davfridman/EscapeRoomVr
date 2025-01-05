@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18306622, g: 0.2287434, b: 0.30669293, a: 1}
+  m_IndirectSpecularColor: {r: 0.18306547, g: 0.2287423, b: 0.30669147, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -857,6 +857,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 47404150}
     m_Modifications:
+    - target: {fileID: 478485150149900756, guid: 11c7bf42578334241a32c8c58bc57c17, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1d07ccfcc9e3e3b40a769517a5509a0f, type: 2}
     - target: {fileID: 4466797148275939291, guid: 11c7bf42578334241a32c8c58bc57c17, type: 3}
       propertyPath: m_Name
       value: waterStream1
@@ -3836,15 +3840,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 569917031}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.27281836, w: 0.9620656}
-  m_LocalPosition: {x: -24.636, y: 3.454, z: -3.15}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: -0, y: -0, z: -0.448521, w: 0.8937723}
+  m_LocalPosition: {x: -24.655636, y: 3.1752052, z: -5.3}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1346161268}
   - {fileID: 732371766}
   m_Father: {fileID: 971890552}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -31.664}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -53.298}
 --- !u!135 &569917033
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3886,7 +3890,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 342b1c83202874977977abbe1ef98833, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4208,7 +4212,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 230df031940fe408a9a2308451783e25, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5277,6 +5281,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 694881241}
     m_Modifications:
+    - target: {fileID: 478485150149900756, guid: 11c7bf42578334241a32c8c58bc57c17, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 230df031940fe408a9a2308451783e25, type: 2}
     - target: {fileID: 4466797148275939291, guid: 11c7bf42578334241a32c8c58bc57c17, type: 3}
       propertyPath: m_Name
       value: waterStream4
@@ -5544,8 +5552,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.9999999, z: 1.0967802}
+  m_Center: {x: 0, y: -4.680097e-18, z: -0.04839009}
 --- !u!23 &936055255
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6637,7 +6645,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 326118cd5b29ece43a676da61e722b76, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6896,7 +6904,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2e73bc9abf4cc4ba88ffa9468a13c5f4, type: 2}
+  - {fileID: 2100000, guid: 326118cd5b29ece43a676da61e722b76, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7437,7 +7445,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 569917032}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
