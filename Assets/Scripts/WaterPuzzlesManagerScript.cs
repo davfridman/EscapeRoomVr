@@ -8,6 +8,7 @@ public class GoofScript : MonoBehaviour
     private bool[] sockets;
     [SerializeField] private ElectricityPuzzleManagerScript nextScript;
     [SerializeField] private CommanderSoundManagerScript CommanderSoundManager;
+    [SerializeField] private AudioSource[] waterAudios;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +40,7 @@ public class GoofScript : MonoBehaviour
 
         // Update socket status
         sockets[sockIndex] = true;
+        waterAudios[sockIndex].Stop();
         CheckAllSockets();
     }
 
