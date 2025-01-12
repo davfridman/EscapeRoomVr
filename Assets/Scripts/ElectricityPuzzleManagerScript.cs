@@ -9,6 +9,7 @@ public class ElectricityPuzzleManagerScript : MonoBehaviour
     [SerializeField] private bool[] sockets;
     [SerializeField] private UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable[] xrGrabInteractable;
     [SerializeField] private NumberPadButtonScript nextScript;
+    [SerializeField] private CommanderSoundManagerScript CommanderSoundManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -125,6 +126,7 @@ public class ElectricityPuzzleManagerScript : MonoBehaviour
         }
         DeActivate();
         nextScript.Activate();
+        CommanderSoundManager.PlaySound(4);
 
     }
 }

@@ -7,6 +7,7 @@ public class GoofScript : MonoBehaviour
     [SerializeField] private int numberOfSockets = 4;
     private bool[] sockets;
     [SerializeField] private ElectricityPuzzleManagerScript nextScript;
+    [SerializeField] private CommanderSoundManagerScript CommanderSoundManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -89,5 +90,6 @@ public class GoofScript : MonoBehaviour
             if (!sockets[i]) { return; }
         }
         nextScript.Activate();
+        CommanderSoundManager.PlaySound(2);
     }
 }
