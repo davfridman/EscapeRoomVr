@@ -12,6 +12,7 @@ public class NumberPadButtonScript : MonoBehaviour
     [SerializeField] private TeleportFromScript teleportActivation;
     [SerializeField] private bool isActivated = false;
     [SerializeField] private CommanderSoundManagerScript CommanderSoundManager;
+    [SerializeField] private ChangeMaterialState ChangeMaterialStateScript;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +41,8 @@ public class NumberPadButtonScript : MonoBehaviour
             textBox.text = "";
             if(isPasswordCorrect){
                 teleportActivation.ActivateTeleporter();
+                ChangeMaterialStateScript.ChangeMaterial();
+
             }
         }
         else if(textBox.text.Length < passwordLength){ 
