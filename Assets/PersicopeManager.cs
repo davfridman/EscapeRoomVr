@@ -1,61 +1,34 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class PersicopeManager : MonoBehaviour
+public class PeriscopeManager : MonoBehaviour
 {
     [SerializeField] private bool isHoldingLeft = false;
     [SerializeField] private bool isHoldingRight = false;
-    [SerializeField] private string sceneToLoad;        // Name of the scene to load
-    [SerializeField] private Camera mainCamera;        // The main camera to disable
-    [SerializeField] private Camera secondaryCamera;   // The camera to enable
-    [SerializeField] private float delayBeforeLoading = 6f; // Delay time before loading the preloaded scene
+    [SerializeField] private Camera mainCamera;          // The main camera
+    [SerializeField] private Camera transitionCamera;    // The transition camera
+    [SerializeField] private Camera islandCamera;        // The island camera
+    [SerializeField] private float transitionDuration = 5f;  // Duration for the transition camera
+    [SerializeField] private float islandDuration = 1000f;     // Duration for the island camera
 
-    private AsyncOperation asyncLoad;
+    private Coroutine cameraCycleCoroutine; // To keep track of the active coroutine
 
     // Start is called before the first frame update
     void Start()
     {
-        if (mainCamera == null || secondaryCamera == null)
+        if (mainCamera == null || transitionCamera == null || islandCamera == null)
         {
             Debug.LogError("Cameras are not assigned!");
             return;
         }
+
+        // Ensure only the main camera is active at the start
+        mainCamera.gameObject.SetActive(true);
+        transitionCamera.gameObject.SetActive(false);
+        islandCamera.gameObject.SetActive(false);
     }
 
-    // Function to start the entire process
-    public void StartCameraSwitchAndLoadScene()
-    {
-        StartCoroutine(SwitchCameraAndLoadScene());
-    }
-
-    private IEnumerator SwitchCameraAndLoadScene()
-    {
-        // Start loading the scene asynchronously (in the background)
-        asyncLoad = SceneManager.LoadSceneAsync(sceneToLoad);
-        asyncLoad.allowSceneActivation = false;  // Prevent automatic scene activation until we are ready
-
-        // Disable the main camera and enable the secondary camera
-        mainCamera.gameObject.SetActive(false);
-        secondaryCamera.gameObject.SetActive(true);
-
-        // Wait for the specified time (e.g., 3 seconds)
-        yield return new WaitForSeconds(delayBeforeLoading);
-
-        // Now we allow the scene to activate
-        asyncLoad.allowSceneActivation = true;
-
-        // Wait until the scene is fully loaded
-        while (!asyncLoad.isDone)
-        {
-            yield return null;
-        }
-
-        // Once the scene is fully loaded, we can switch to it
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneToLoad));
-    }
-
-    // Call this method to start the process when both hands are holding
+    // Call this method to start the camera cycle process when both hands are holding
     public void hold(bool isLeft)
     {
         if (isLeft)
@@ -67,13 +40,13 @@ public class PersicopeManager : MonoBehaviour
             isHoldingRight = true;
         }
 
-        if (isHoldingLeft && isHoldingRight)
+        if (isHoldingLeft && isHoldingRight && cameraCycleCoroutine == null)
         {
-            StartCameraSwitchAndLoadScene();
+            cameraCycleCoroutine = StartCoroutine(CycleCameras());
         }
     }
 
-    // Call this method to stop holding when a hand is released
+    // Call this method to stop the process when a hand is released
     public void unhold(bool isLeft)
     {
         if (isLeft)
@@ -84,5 +57,40 @@ public class PersicopeManager : MonoBehaviour
         {
             isHoldingRight = false;
         }
+
+        if (!isHoldingLeft && !isHoldingRight && cameraCycleCoroutine != null)
+        {
+            StopCoroutine(cameraCycleCoroutine);
+            cameraCycleCoroutine = null;
+
+            // Reset to main camera
+            SetActiveCamera(mainCamera);
+        }
+    }
+
+    // Coroutine to cycle through the cameras
+    private IEnumerator CycleCameras()
+    {
+        while (true)
+        {
+            // Show the transition camera
+            SetActiveCamera(transitionCamera);
+            yield return new WaitForSeconds(transitionDuration);
+
+            // Show the island camera
+            SetActiveCamera(islandCamera);
+            yield return new WaitForSeconds(islandDuration);
+
+            // Return to the main camera
+            SetActiveCamera(mainCamera);
+        }
+    }
+
+    // Helper function to activate one camera and deactivate the others
+    private void SetActiveCamera(Camera activeCamera)
+    {
+        mainCamera.gameObject.SetActive(activeCamera == mainCamera);
+        transitionCamera.gameObject.SetActive(activeCamera == transitionCamera);
+        islandCamera.gameObject.SetActive(activeCamera == islandCamera);
     }
 }
