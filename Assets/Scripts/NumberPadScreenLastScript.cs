@@ -12,15 +12,13 @@ public class NumberPadButtonLastScript : MonoBehaviour
     [SerializeField] private int currentPassword = 0;
     [SerializeField] private int numberOfPasswords = 5;
     [SerializeField] private bool isActivated = false;
-    [SerializeField] private CommanderSoundManagerScript CommanderSoundManager;
     [SerializeField] private AudioSource numberBeep;
     [SerializeField] private AudioSource enterBeep;
-    [SerializeField] private FlagsManagerScript flagsManager;
+    [SerializeField] private AudioSource tryAgainSound;
 
     // Start is called before the first frame update
     void Start()
     {
-        flagsManager.ActivateFlag(0);
 
     }
 
@@ -40,7 +38,6 @@ public class NumberPadButtonLastScript : MonoBehaviour
         {
             return;
         }
-        CommanderSoundManager.PlaySound(5);
         Debug.Log("buttonNum: " + buttonNum);
         if (buttonNum == -1)
         {
@@ -50,12 +47,16 @@ public class NumberPadButtonLastScript : MonoBehaviour
             if (isPasswordCorrect)
             {
                 currentPassword++;
-                flagsManager.ActivateFlag(currentPassword);
                 if (currentPassword == numberOfPasswords)
                 {
                     numberBeep.Play();
                 }
 
+            }
+            else
+            {
+                tryAgainSound.Play();
+                currentPassword = 0;
             }
         }
         else if (textBox.text.Length < passwordLength)

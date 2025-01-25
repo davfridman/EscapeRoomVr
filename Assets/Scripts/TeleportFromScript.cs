@@ -6,6 +6,7 @@ public class TeleportFromScript : MonoBehaviour
 {
     [SerializeField] private Transform teleportTo;
     [SerializeField] private bool teleporterOnline = false;
+    [SerializeField] private CommanderSoundManagerScript CommanderSoundManager;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,7 @@ public class TeleportFromScript : MonoBehaviour
         {
             Debug.Log("teleporting");
             other.transform.position = teleportTo.position;
+            CommanderSoundManager.PlaySound(6);
         }
     }
 }

@@ -5,27 +5,27 @@ public class PeriscopeManager : MonoBehaviour
 {
     [SerializeField] private bool isHoldingLeft = false;
     [SerializeField] private bool isHoldingRight = false;
-    [SerializeField] private Camera mainCamera;          // The main camera
-    [SerializeField] private Camera transitionCamera;    // The transition camera
-    [SerializeField] private Camera islandCamera;        // The island camera
+
+    [SerializeField] private GameObject mainXROrigin;        // The XR Origin for the main camera
+    [SerializeField] private GameObject islandXROrigin;      // The XR Origin for the island camera
+    [SerializeField] private Camera transitionCamera;        // The transition camera
+
     [SerializeField] private float transitionDuration = 5f;  // Duration for the transition camera
-    [SerializeField] private float islandDuration = 1000f;     // Duration for the island camera
+    [SerializeField] private float islandDuration = 10f;     // Duration for the island camera
 
     private Coroutine cameraCycleCoroutine; // To keep track of the active coroutine
 
     // Start is called before the first frame update
     void Start()
     {
-        if (mainCamera == null || transitionCamera == null || islandCamera == null)
+        if (mainXROrigin == null || islandXROrigin == null || transitionCamera == null)
         {
-            Debug.LogError("Cameras are not assigned!");
+            Debug.LogError("XROrigins or Cameras are not assigned!");
             return;
         }
 
-        // Ensure only the main camera is active at the start
-        mainCamera.gameObject.SetActive(true);
-        transitionCamera.gameObject.SetActive(false);
-        islandCamera.gameObject.SetActive(false);
+        // Ensure only the main XR Origin is visible at the start
+        EnableMainCamera();
     }
 
     // Call this method to start the camera cycle process when both hands are holding
@@ -63,8 +63,8 @@ public class PeriscopeManager : MonoBehaviour
             StopCoroutine(cameraCycleCoroutine);
             cameraCycleCoroutine = null;
 
-            // Reset to main camera
-            SetActiveCamera(mainCamera);
+            // Reset to the main XR Origin camera
+            EnableMainCamera();
         }
     }
 
@@ -73,24 +73,50 @@ public class PeriscopeManager : MonoBehaviour
     {
         while (true)
         {
-            // Show the transition camera
-            SetActiveCamera(transitionCamera);
+            // Enable the transition camera
+            EnableTransitionCamera();
             yield return new WaitForSeconds(transitionDuration);
 
-            // Show the island camera
-            SetActiveCamera(islandCamera);
+            // Enable the island XR Origin's camera
+            EnableIslandCamera();
             yield return new WaitForSeconds(islandDuration);
 
-            // Return to the main camera
-            SetActiveCamera(mainCamera);
+            // Return to the main XR Origin's camera
+            EnableMainCamera();
         }
     }
 
-    // Helper function to activate one camera and deactivate the others
-    private void SetActiveCamera(Camera activeCamera)
+    // Enable the main XR Origin's camera and disable the others
+    private void EnableMainCamera()
     {
-        mainCamera.gameObject.SetActive(activeCamera == mainCamera);
-        transitionCamera.gameObject.SetActive(activeCamera == transitionCamera);
-        islandCamera.gameObject.SetActive(activeCamera == islandCamera);
+        SetCameraActive(mainXROrigin, false);
+        SetCameraActive(islandXROrigin, false);
+        transitionCamera.gameObject.SetActive(false);
+    }
+
+    // Enable the transition camera and disable the others
+    private void EnableTransitionCamera()
+    {
+        SetCameraActive(mainXROrigin, false);
+        SetCameraActive(islandXROrigin, false);
+        transitionCamera.gameObject.SetActive(true);
+    }
+
+    // Enable the island XR Origin's camera and disable the others
+    private void EnableIslandCamera()
+    {
+        SetCameraActive(mainXROrigin, false);
+        SetCameraActive(islandXROrigin, true);
+        transitionCamera.gameObject.SetActive(false);
+    }
+
+    // Helper method to enable or disable the XR Origin's camera while keeping the XR Origin active
+    private void SetCameraActive(GameObject xrOrigin, bool isActive)
+    {
+        var camera = xrOrigin.GetComponentInChildren<Camera>(true); // Get the Camera component within the XR Origin
+        if (camera != null)
+        {
+            camera.gameObject.SetActive(isActive);
+        }
     }
 }
