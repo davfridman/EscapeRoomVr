@@ -11,7 +11,7 @@ public class FlagsManagerScript : MonoBehaviour
     void Start()
     {
         // Optionally deactivate all flags at the start
-        DeactivateAllFlags();
+        //DeactivateAllFlags();
     }
 
     // Function to activate a specific flag by index
