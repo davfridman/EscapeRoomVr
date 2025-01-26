@@ -25,7 +25,7 @@ public class PeriscopeManager : MonoBehaviour
         }
 
         // Ensure only the main XR Origin is visible at the start
-        EnableMainCamera();
+        //EnableMainCamera();
     }
 
     // Call this method to start the camera cycle process when both hands are holding
@@ -89,7 +89,7 @@ public class PeriscopeManager : MonoBehaviour
     // Enable the main XR Origin's camera and disable the others
     private void EnableMainCamera()
     {
-        SetCameraActive(mainXROrigin, false);
+        SetCameraActive(mainXROrigin, true);
         SetCameraActive(islandXROrigin, false);
         transitionCamera.gameObject.SetActive(false);
     }
