@@ -1,12 +1,18 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Playables;  // For Timeline control
+using System.Collections.Generic;
 
 public class StartCutsceneScript : MonoBehaviour
 {
     [SerializeField] private PlayableDirector cutsceneDirector;  // Timeline's Playable Director
     [SerializeField] private Camera cutsceneCamera;              // Camera used for the cutscene
-    [SerializeField] private Camera xrOrigin;                    // Main XR or game camera to activate after the cutscene
+    [SerializeField] private Camera xrOrigin; 
+
+    [Header("Objects to Control")]
+    public List<GameObject> objectsToActivate;    // List of objects to activate
+    public List<GameObject> objectsToDeactivate;
+
 
     void Start()
     {
@@ -36,7 +42,7 @@ public class StartCutsceneScript : MonoBehaviour
         {
             Debug.LogWarning("Cutscene Camera not assigned in the Inspector!");
         }
-
+        DeactivateObjects();
         // Enable the main game camera
         if (xrOrigin != null)
         {
@@ -45,6 +51,30 @@ public class StartCutsceneScript : MonoBehaviour
         else
         {
             Debug.LogWarning("XR Origin Camera not assigned in the Inspector!");
+        }
+        ActivateObjects();
+    }
+
+    public void ActivateObjects()
+    {
+        foreach (GameObject obj in objectsToActivate)
+        {
+            if (obj != null)
+            {
+                obj.SetActive(true);
+            }
+        }
+    }
+
+
+    public void DeactivateObjects()
+    {
+        foreach (GameObject obj in objectsToDeactivate)
+        {
+            if (obj != null)
+            {
+                obj.SetActive(false);
+            }
         }
     }
 }
