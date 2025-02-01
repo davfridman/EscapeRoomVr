@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainSceneWithDecor.unity
     guid: 47e3b9f97b8434c19818af5c9061d243
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/IslandsPink.unity
     guid: 8c6ff6cabfc983f4482126453a070549
   m_configObjects:
