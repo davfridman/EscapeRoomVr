@@ -15,6 +15,7 @@ public class NumberPadButtonLastScript : MonoBehaviour
     [SerializeField] private AudioSource numberBeep;
     [SerializeField] private AudioSource enterBeep;
     [SerializeField] private AudioSource tryAgainSound;
+    [SerializeField] public static bool lastPuzzleDone = false;
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +51,7 @@ public class NumberPadButtonLastScript : MonoBehaviour
                 if (currentPassword == numberOfPasswords)
                 {
                     numberBeep.Play();
+                    lastPuzzleDone = true;
                 }
 
             }

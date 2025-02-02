@@ -15,6 +15,7 @@ public class PeriscopeManager : MonoBehaviour
 
     private Coroutine cameraCycleCoroutine;
     private Animator periscopeAnimator;
+    private AudioSource persicopeAudio;
 
     void Start()
     {
@@ -23,7 +24,7 @@ public class PeriscopeManager : MonoBehaviour
             Debug.LogError("Cameras or Periscope Parent are not assigned!");
             return;
         }
-
+        
         periscopeAnimator = periscopeParent.GetComponent<Animator>();
         if (periscopeAnimator == null)
         {
