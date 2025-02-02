@@ -30,7 +30,7 @@ public class PeriscopeManager : MonoBehaviour
             Debug.LogError("Animator component missing on Periscope Parent!");
         }
 
-        EnableRegularCamera();
+        // EnableRegularCamera();
     }
 
     public void hold(bool isLeft)
